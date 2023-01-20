@@ -1,6 +1,5 @@
 ---
-const data = await fetch("https://api.genshin.dev/characters");
-const characters = await data.json();
+import Search from "../components/Search.vue";
 ---
 
-<input type="text" name="" id="chname" />
+<Search client:load />
