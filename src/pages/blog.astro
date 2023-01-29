@@ -28,7 +28,7 @@ const blogs = await Astro.glob('../blogs/*.md');
                             <p>{date}</p>
                             <p>{excerpt}</p>
                             <p>{author}</p>
-                            <a class="btn" href={`/${slug}`}>Read More</a>
+                            <a class="btn" href={`/blog/${slug}`}>Read More</a>
                         </div>
                     )
                 })
