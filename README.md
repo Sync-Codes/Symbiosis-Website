@@ -1,1 +1,1 @@
-# Welcome to **Symbiosis**
+# Symbiosis

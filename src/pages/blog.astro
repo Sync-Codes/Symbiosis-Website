@@ -1,13 +1,15 @@
 ---
 import "../css/style.css";
-import Layout from '../layouts/Layout.astro';	
+import Layout from '../layouts/Layout.astro';
+
+const blogs = await Astro.glob('../blogs/*.md');
 ---
 
 <Layout title="Blog">
         <!-- <h1>This is some thing new </h1> -->
         <section class="sec">
             <header>
-                <a href="#"><img src="/images/logo.jpg" class="logo" alt=""></a>
+                <a href="/"><img src="/images/logo.jpg" class="logo" alt=""></a>
                 <div class="toggleMenu"></div>
                 <ul class="navigation">
                     <li><a href="/">Home</a></li>
@@ -16,8 +18,46 @@ import Layout from '../layouts/Layout.astro';
                     <li><a href="/blog">Blog</a></li>
                 </ul>
             </header>
+                   <div>
+            {
+                blogs.map(b => {
+                    const { title, date, excerpt, author, slug } = b.frontmatter;
+                    return (
+                        <div class="blog">
+                            <h2>{title}</h2>
+                            <p>{date}</p>
+                            <p>{excerpt}</p>
+                            <p>{author}</p>
+                            <a class="btn" href={`/${slug}`}>Read More</a>
+                        </div>
+                    )
+                })
+            }
+        </div> 
         </section>
-        <script>
-            import "../scripts/main.js";
-        </script>
+
+<script>
+    import "../scripts/main.js";
+</script>
+
+<style>
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #fff;
+    color: #111;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+        
+.btn:hover {
+    background: #111;
+    color: #fff;
+    transition: 0.5s;
+}
+</style>
 </Layout>

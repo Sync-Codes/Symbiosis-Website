@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../css/style.css";
+export async function getStaticPaths() {
+    const blogs = await Astro.glob('../blogs/*.md');
+    return blogs.map(blog => ({
+        params: {
+            slug: blog.frontmatter.slug
+        },
+        props: {
+            blog
+        }
+    }));
+}
+
+const { Content, frontmatter } = Astro.props.blog;
+---
+
+<Layout>
+    <Content />
+</Layout>
