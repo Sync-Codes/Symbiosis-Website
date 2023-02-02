@@ -1,82 +1,65 @@
 ---
 import "../css/style.css";
 import Layout from '../layouts/Layout.astro';	
+const members = await Astro.glob('../members/*.md');
+members.map(m => {
+    m.frontmatter.socialLinks.map(s => {
+        if(s.name === 'github') {
+            m.frontmatter.github = s.url;
+            m.frontmatter.gClass = s.className;
+        } else if(s.name === 'twitter') {
+            m.frontmatter.twitter = s.url;
+            m.frontmatter.tClass = s.className;
+        }
+    })
+});
 ---
-
 <Layout title="About Us">
-        <!-- <h1>This is some thing new </h1> -->
-        <section class="sec">
-            <header>
-                <a href="/"><img src="/images/logo.jpg" class="logo" alt=""></a>
-                <div class="toggleMenu"></div>
-                <ul class="navigation">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/whatsnew">What's New</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                </ul>
-            </header>
-    
-             <div class="slider">
-                <div class="card">
-                    <div class="img"><img src="/images/memb.jpg" alt=""> 
-                        <div class="content">
-                            <div class="title">Saransh Lingwal</div>
-                            <div class="sub-title">Web Developer</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur facere nihil vero, cum,
-                                necessitatibus hic excepturi reiciendis accusamus totam non accusantium? Dolorum praesentium sit
-                                autem cumque delectus iste, similique laborum!</p>
-                            <div class="btn">
-                                <button onclick="window.location.href = 'https://github.com/Sarlin-7757';">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="/images/memc.jpg" alt="">
-                        <div class="content">
-                            <div class="title">Aditya Narayan</div>
-                            <div class="sub-title">Data Analyst </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur facere nihil vero, cum,
-                                necessitatibus hic excepturi reiciendis accusamus totam non accusantium? Dolorum praesentium sit
-                                autem cumque delectus iste, similique laborum!</p>
-                            <div class="btn">
-                                <button onclick="window.location.href = '';">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="/images/mema.jpg" alt="">
-                        <div class="content">
-                            <div class="title">Dr. Manoj Kumar</div>
-                            <div class="sub-title">Professor</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur facere nihil vero, cum,
-                                necessitatibus hic excepturi reiciendis accusamus totam non accusantium? Dolorum praesentium sit
-                                autem cumque delectus iste, similique laborum!</p>
-                            <div class="btn">
-                                <button onclick="window.location.href ='';">Read More</button>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="/images/memd.jpg" alt="">
-                        <div class="content">
-                            <div class="title">Bhavya Dang</div>
-                            <div class="sub-title">Backend-Developer</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur facere nihil vero, cum,
-                                necessitatibus hic excepturi reiciendis accusamus totam non accusantium? Dolorum praesentium sit
-                                autem cumque delectus iste, similique laborum!</p>
-                            <div class="btn">
-                                <button onclick="window.location.href= '';">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        </section>
-        <script>
-            import "../scripts/main.js";
-        </script>
+   <section class="sec">
+      <header>
+         <a href="/"><img src="/images/logo.jpg" class="logo" alt=""></a>
+         <div class="toggleMenu"></div>
+         <ul class="navigation">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/blogs">Blogs</a></li>
+         </ul>
+      </header>
+
+      <div class="slider">
+         {
+         members.map(m => {
+         const { name, shortBio, photoUrl, role, github, twitter, gClass, tClass } = m.frontmatter;
+
+         return (
+         <div class="card">
+            <div class="img">
+               <img src={ photoUrl } alt=""> 
+               <div class="content">
+                  <div class="title">{ name }</div>
+                  <div class="sub-title">{ role }</div>
+                  <p>{ shortBio }</p>
+                  <div class="btn">
+                    <a href={ github } target="_blank" rel="noopener noreferrer"><button type="button">
+                        <i class={ gClass }></i>          
+                        </button>
+                    </a>
+                  </div>
+                  <div class="btn">
+                    <a href={ twitter } target="_blank" rel="noopener noreferrer"><button type="button">
+                        <i class={ tClass }></i>          
+                        </button>
+                    </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         )
+        })
+        }
+      </div>
+   </section>
+   <script>
+      import "../scripts/main.js";
+   </script>
 </Layout>

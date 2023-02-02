@@ -24,10 +24,6 @@ section {
     transition: 0.5s;
 }
 
-#sec-two{
-    background:#131313;
-}
-
 header {
     /* background: linear-gradient(110.6deg, rgb(156, 116, 129) -18.3%, rgb(67, 54, 74) 16.4%, rgb(47, 48, 67) 68.2%, rgb(27, 23, 36) 99.1%); */
     position: absolute;
@@ -76,7 +72,8 @@ header ul li a {
 
 header ul li a:hover {
     color: rgb(30, 50, 230);
-    text-decoration:underline;
+    transition: ease-in-out;
+    /* text-decoration:underline; */
 }
 
 .lab-section {
@@ -108,10 +105,10 @@ header ul li a:hover {
     /* text-decoration: underline; */
 
 }
-
+/* 
 .lab-section .labcontent h2:hover{
     text-decoration: underline;
-}
+} */
 
 .lab-section .labcontent p {
     color: rgb(78, 76, 76);
@@ -140,6 +137,14 @@ header ul li a:hover {
 
 .lab-section .labcontent .button:hover{
     transform: translateY(-3px);
+    background-color: #0F1616;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-delay: .8;
+}
+
+.lab-section .labcontent .button:hover a{
+    color: #fff;
 }
 
 
@@ -163,8 +168,15 @@ header ul li a:hover {
 
 .lab-section .labs img:hover{
     /* width: 300px; */
-    transform: translate(10px);
-    box-shadow: 10px 5px 5px #4b4b4b;
+    transform: translate(3px);
+    box-shadow: 5px 3px 3px #c9c5c5;
+    /* transform: translate(10px);
+    box-shadow: 10px 5px 5px #c9c5c5; */
+}
+
+
+#sec-two{
+    background:#131313;
 }
 
 
@@ -189,7 +201,9 @@ header ul li a:hover {
 }
 
 .work-section .works img:hover{
-    transform: translate(20px);
+    /* transform: translate(20px); */
+    transform: translate(3px);
+    /* box-shadow: 5px 3px 3px #c9c5c5; */
 }
 
 .work-section .workcontent {
@@ -224,12 +238,12 @@ header ul li a:hover {
     transition: all 500ms ease-in;
 } */
 /* .work-section .workcontent h2:hover:before{ */
-.work-section .workcontent h2:hover{
+/* .work-section .workcontent h2:hover{
     text-decoration: underline;
     transition: all 0.5s;
-    /* width: 100%;
-    left: 0; */
-}
+    width: 100%;
+    left: 0; 
+} */
 
 .work-section .workcontent p {
     color: rgb(126, 126, 126);
@@ -242,7 +256,7 @@ header ul li a:hover {
     margin-top: 20px;
     padding: 8px 20px;
     background: rgb(171, 169, 169);
-    color: rgb(255, 255, 255);
+    color: #131313;
     border-radius: 40px;
     font-weight: 500;
     letter-spacing: 1px;
