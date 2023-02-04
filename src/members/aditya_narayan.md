@@ -12,5 +12,6 @@ socialLinks:
       "className": "fa-brands fa-twitter",
     },
     { "name": "github", "url": "", "className": "fa-brands fa-github" },
+    # {"name": "linkedin" , "url": "" , "className": "fa-brands fa-linkedin-in"},
   ]
 ---

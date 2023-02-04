@@ -10,7 +10,11 @@ members.map(m => {
         } else if(s.name === 'twitter') {
             m.frontmatter.twitter = s.url;
             m.frontmatter.tClass = s.className;
-        }
+        } 
+      // else {//if(s.name === 'linkedin'){
+      //    m.frontmatter.linkedin = s.url;
+      //    m.frontmatter.lClass = s.className;
+      //   }
     })
 });
 ---
@@ -26,39 +30,37 @@ members.map(m => {
          </ul>
       </header>
 
-      <div class="slider">
-         {
-         members.map(m => {
-         const { name, shortBio, photoUrl, role, github, twitter, gClass, tClass } = m.frontmatter;
-
-         return (
-         <div class="card">
-            <div class="img">
-               <img src={ photoUrl } alt=""> 
-               <div class="content">
-                  <div class="title">{ name }</div>
-                  <div class="sub-title">{ role }</div>
-                  <p>{ shortBio }</p>
-                  <div class="btn">
-                    <a href={ github } target="_blank" rel="noopener noreferrer"><button type="button">
-                        <i class={ gClass }></i>          
-                        </button>
-                    </a>
-                  </div>
-                  <div class="btn">
-                    <a href={ twitter } target="_blank" rel="noopener noreferrer"><button type="button">
-                        <i class={ tClass }></i>          
-                        </button>
-                    </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         )
-        })
-        }
-      </div>
-   </section>
+                        <!-- <section id="sec-three" > -->
+                              <div class="container" id="container_about">
+                                 <div class="grid">
+                                    {
+                                       members.map(m => {
+                                            const { name, shortBio, photoUrl, role, github, twitter,gClass, tClass, } = m.frontmatter;
+                                               return (
+                                                     
+                                               <div class="blog-card">
+                                                   <div class="card_img">
+                                                       <img src={photoUrl} alt="">
+                                                   </div>
+                                                   <div class="card_body">
+                                                        <h2 class="card_title">{name}</h2>
+                                                        <h3 id="card_title">{role}</h3> 
+                                                        <p>{shortBio}</p>
+                                                      <div class="so_link">
+                                                         <a href=""><i  class="fab fa-instagram"></i></a>
+                                                         <a href=""><i  class="fab fa-linkedin"></i></a>
+                                                         <a href=""><i  class="fab fa-twitter"></i></a>
+                                                      </div>  
+                                                   </div>
+                                               </div>	                        	
+                                   
+                                         )
+                                      })
+                                   
+                                   }      
+                        </div>
+                     </div>      
+               </section>                
    <script>
       import "../scripts/main.js";
    </script>

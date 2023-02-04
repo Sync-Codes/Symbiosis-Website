@@ -92,6 +92,7 @@ header ul li a:hover {
     justify-content: flex-end;
     padding: 10px;
     margin-left: 10px;
+    margin-top: 19px;
 }
 
 .lab-section .labcontent h2 {
@@ -159,7 +160,7 @@ header ul li a:hover {
 }
 
 .lab-section .labs img {
-    width: 460px;
+    width: 500px;
     /* height: 350px; */
     border-radius: 20px;
     transition: 0.5s;
@@ -188,6 +189,7 @@ header ul li a:hover {
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
+    justify-content: center;
     /* border: 2px solid red; */
 }
 
@@ -210,7 +212,7 @@ header ul li a:hover {
     position: relative;
     max-width: 600px;
     justify-content: flex-end;
-    margin-left: 10px;
+    margin-left: -24px;
     padding: 10px;
 
     /* bottom: 64px; */
@@ -546,6 +548,7 @@ header ul li a:hover {
         position: relative;
         max-width: 100%;
         padding-right: 20px;
+        
     }
 
     .work-section .workcontent h2 {
@@ -556,14 +559,16 @@ header ul li a:hover {
     .work-section .workcontent a {
         font-size: 14px;
         padding: 8px 15px;
+        
     }
 
     .work-section .works {
         width: 100%;
         display: flex;
         padding-right: 0;
-        margin-top: 50px;
+        margin-top: 64px;
         justify-content: center;
+        margin-right: 47px;
     }
 
     .work-section.works img {
@@ -615,7 +620,7 @@ header ul li a:hover {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 10px;
+    padding: 50px;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -649,10 +654,13 @@ header ul li a:hover {
 
 
 
-.container {
+.container{
     max-width: 85%;
     margin: 0 auto;
     height: 100%;
+}
+#container_about{
+    margin-top: 5px;
 }
 
 .grid {
@@ -693,14 +701,17 @@ header ul li a:hover {
     font-weight: 900;
     text-transform: capitalize;
     font-size: 26px;
-    padding-bottom: 20px;
-    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .card_title:hover{
     text-decoration: underline;
 }
-
+#card_title{
+    font-size: 15px;
+    font-family: 'Poppins';
+}
 .card_body p {
     font-weight: 400;
     font-size: 18px;
@@ -769,12 +780,22 @@ a.read_more:hover {
     text-decoration: underline;
     background-color: black;
 }
+.so_link{
+    padding: 10px;
+}
 
+.so_link a{
+    font-size: 25px;
+    padding: 5px;
+    color: #131313;
+}
 @media only screen and (max-width: 1441px) and (min-width: 1025px) {
-    .container {
+    .container{
         max-width: 90%;
     }
-
+    #container_about{
+        margin-top: 25px;
+    }
     .grid {
         gap: 2%;
     }
@@ -824,6 +845,9 @@ a.read_more:hover {
     .container {
         max-width: 90%;
     }
+    #container_about{
+        margin-top: 25px;
+    }
 
     .blog-card {
         padding: 20px 10px;
@@ -839,6 +863,7 @@ a.read_more:hover {
     }
 
     .card_body p {
+
         font-size: 14px;
     }
 

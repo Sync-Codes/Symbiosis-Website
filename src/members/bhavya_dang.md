@@ -16,5 +16,10 @@ socialLinks:
       "url": "https://github.com/Sync-Codes",
       "className": "fa-brands fa-github",
     },
+    # {
+    #   "name": "linkedin",
+    #   "url": "", 
+    #   "className": "fa-brands fa-linkedin-in"),
+    # },
   ]
 ---

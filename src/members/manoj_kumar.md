@@ -1,5 +1,5 @@
 ---
-name: "Manoj Kumar"
+name: "Dr.Manoj Kumar"
 # slug: "first-1-0"
 shortBio: "Hi there! I am Manoj Kumar. A Professor at Amity University."
 photoUrl: "../images/mema.jpg"
@@ -12,5 +12,8 @@ socialLinks:
       "className": "fa-brands fa-twitter",
     },
     { "name": "github", "url": "", "className": "fa-brands fa-github" },
+    # {
+    #   "name": "linkedin" , "url": "","className": "fa-brands fa-linkedin-in" 
+    # },
   ]
 ---
