@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato&family=Montserrat:wght@600&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato&family=Lora&family=Montserrat:wght@600&family=Open+Sans&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -84,6 +84,21 @@ header ul li a:hover {
     /* justify-content: space-between; */
     align-items: center;
     /* border: 2px solid red; */
+}
+
+.slide-left{
+    animation:slideleft 1s linear forwards;
+}
+
+@keyframes slideleft{
+    0%{
+        transform: translate(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px);
+        opacity: 1;
+    }
 }
 
 .lab-section .labcontent {
@@ -202,11 +217,11 @@ header ul li a:hover {
 
 }
 
-.work-section .works img:hover{
+/* .work-section .works img:hover{
     /* transform: translate(20px); */
-    transform: translate(3px);
+    /* transform: translate(3px); */
     /* box-shadow: 5px 3px 3px #c9c5c5; */
-}
+/* } */ 
 
 .work-section .workcontent {
     position: relative;
@@ -659,6 +674,20 @@ header ul li a:hover {
     margin: 0 auto;
     height: 100%;
 }
+.slide-up{
+    animation:slideup 1s linear forwards;
+}
+@keyframes slideup{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 #container_about{
     margin-top: 5px;
 }
@@ -696,8 +725,7 @@ header ul li a:hover {
 }
 
 .card_title {
-    font-family: 'Merriweather',
-        serif;
+    font-family: 'Open Sans';
     font-weight: 900;
     text-transform: capitalize;
     font-size: 26px;
@@ -786,15 +814,23 @@ a.read_more:hover {
 
 .so_link a{
     font-size: 25px;
-    padding: 5px;
+    padding: 8px;
     color: #131313;
+    transition: .5s;
 }
+
+.so_link a:hover{
+    font-size: 30px;
+    color: #383dc7;
+    padding: 10px;
+}
+
 @media only screen and (max-width: 1441px) and (min-width: 1025px) {
     .container{
         max-width: 90%;
     }
     #container_about{
-        margin-top: 25px;
+        margin-top: 29px;
     }
     .grid {
         gap: 2%;
