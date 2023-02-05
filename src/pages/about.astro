@@ -1,82 +1,67 @@
 ---
 import "../css/style.css";
 import Layout from '../layouts/Layout.astro';	
+const members = await Astro.glob('../members/*.md');
+members.map(m => {
+    m.frontmatter.socialLinks.map(s => {
+        if(s.name === 'github') {
+            m.frontmatter.github = s.url;
+            m.frontmatter.gClass = s.className;
+        } else if(s.name === 'twitter') {
+            m.frontmatter.twitter = s.url;
+            m.frontmatter.tClass = s.className;
+        } 
+      // else {//if(s.name === 'linkedin'){
+      //    m.frontmatter.linkedin = s.url;
+      //    m.frontmatter.lClass = s.className;
+      //   }
+    });
+});
 ---
-
 <Layout title="About Us">
-        <!-- <h1>This is some thing new </h1> -->
-        <section class="sec">
-            <header>
-                <a href="/"><img src="/images/logo.jpg" class="logo" alt=""></a>
-                <div class="toggleMenu"></div>
-                <ul class="navigation">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/whatsnew">What's New</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                </ul>
-            </header>
-    
-             <div class="slider">
-                <div class="card">
-                    <div class="img"><img src="/images/memb.jpg" alt=""> 
-                        <div class="content">
-                            <div class="title">Saransh Lingwal</div>
-                            <div class="sub-title">Web Developer</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur facere nihil vero, cum,
-                                necessitatibus hic excepturi reiciendis accusamus totam non accusantium? Dolorum praesentium sit
-                                autem cumque delectus iste, similique laborum!</p>
-                            <div class="btn">
-                                <button onclick="window.location.href = 'https://github.com/Sarlin-7757';">Read More</button>
-                            </div>
+   <section class="sec">
+      <header>
+         <a href="/"><img src="/images/logo.jpg" class="logo" alt=""></a>
+         <div class="toggleMenu"></div>
+         <ul class="navigation">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/blogs">Blogs</a></li>
+         </ul>
+      </header>
+
+                        <!-- <section id="sec-three" > -->
+                              <div class="container slide-up" id="container_about">
+                                 <div class="grid">
+                                    {
+                                       members.map(m => {
+                                            const { name, shortBio, photoUrl, role, github, twitter,gClass, tClass, } = m.frontmatter;
+                                               return (
+                                                     
+                                               <div class="blog-card">
+                                                   <div class="card_img">
+                                                       <img src={photoUrl} alt="">
+                                                   </div>
+                                                   <div class="card_body">
+                                                        <h2 class="card_title">{name}</h2>
+                                                        <h3 id="card_title">{role}</h3> 
+                                                        <p>{shortBio}</p>
+                                                      <div class="so_link">
+                                                         <a href=""><i class="fab fa-github"></i></a>
+                                                         <a href=""><i class="fab fa-linkedin"></i></a>
+                                                         <a href=""><i class="fab fa-twitter"></i></a>
+                                                      </div>  
+                                                   </div>
+                                               </div>	                        	
+                                   
+                                         )
+                                      })
+                                   
+                                   }      
                         </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="/images/memc.jpg" alt="">
-                        <div class="content">
-                            <div class="title">Aditya Narayan</div>
-                            <div class="sub-title">Data Analyst </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur facere nihil vero, cum,
-                                necessitatibus hic excepturi reiciendis accusamus totam non accusantium? Dolorum praesentium sit
-                                autem cumque delectus iste, similique laborum!</p>
-                            <div class="btn">
-                                <button onclick="window.location.href = '';">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="/images/mema.jpg" alt="">
-                        <div class="content">
-                            <div class="title">Dr. Manoj Kumar</div>
-                            <div class="sub-title">Professor</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur facere nihil vero, cum,
-                                necessitatibus hic excepturi reiciendis accusamus totam non accusantium? Dolorum praesentium sit
-                                autem cumque delectus iste, similique laborum!</p>
-                            <div class="btn">
-                                <button onclick="window.location.href ='';">Read More</button>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="/images/memd.jpg" alt="">
-                        <div class="content">
-                            <div class="title">Bhavya Dang</div>
-                            <div class="sub-title">Backend-Developer</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur facere nihil vero, cum,
-                                necessitatibus hic excepturi reiciendis accusamus totam non accusantium? Dolorum praesentium sit
-                                autem cumque delectus iste, similique laborum!</p>
-                            <div class="btn">
-                                <button onclick="window.location.href= '';">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        </section>
-        <script>
-            import "../scripts/main.js";
-        </script>
+                     </div>      
+               </section>                
+   <script>
+      import "../scripts/main.js";
+   </script>
 </Layout>

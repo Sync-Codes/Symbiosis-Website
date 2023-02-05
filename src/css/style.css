@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato&family=Montserrat:wght@600&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato&family=Lora&family=Montserrat:wght@600&family=Open+Sans&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -22,10 +22,6 @@ section {
     /* background: linear-gradient(110.6deg, rgb(156, 116, 129) -18.3%, rgb(67, 54, 74) 16.4%, rgb(47, 48, 67) 68.2%, rgb(27, 23, 36) 99.1%); */
     background: rgb(248, 246, 246);
     transition: 0.5s;
-}
-
-#sec-two{
-    background:#131313;
 }
 
 header {
@@ -76,7 +72,8 @@ header ul li a {
 
 header ul li a:hover {
     color: rgb(30, 50, 230);
-    text-decoration:underline;
+    transition: ease-in-out;
+    /* text-decoration:underline; */
 }
 
 .lab-section {
@@ -89,12 +86,28 @@ header ul li a:hover {
     /* border: 2px solid red; */
 }
 
+.slide-left{
+    animation:slideleft 1s linear forwards;
+}
+
+@keyframes slideleft{
+    0%{
+        transform: translate(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+
 .lab-section .labcontent {
     position: relative;
     max-width: 600px;
     justify-content: flex-end;
     padding: 10px;
     margin-left: 10px;
+    margin-top: 19px;
 }
 
 .lab-section .labcontent h2 {
@@ -108,10 +121,10 @@ header ul li a:hover {
     /* text-decoration: underline; */
 
 }
-
+/* 
 .lab-section .labcontent h2:hover{
     text-decoration: underline;
-}
+} */
 
 .lab-section .labcontent p {
     color: rgb(78, 76, 76);
@@ -140,6 +153,14 @@ header ul li a:hover {
 
 .lab-section .labcontent .button:hover{
     transform: translateY(-3px);
+    background-color: #0F1616;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-delay: .8;
+}
+
+.lab-section .labcontent .button:hover a{
+    color: #fff;
 }
 
 
@@ -154,7 +175,7 @@ header ul li a:hover {
 }
 
 .lab-section .labs img {
-    width: 460px;
+    width: 500px;
     /* height: 350px; */
     border-radius: 20px;
     transition: 0.5s;
@@ -163,8 +184,15 @@ header ul li a:hover {
 
 .lab-section .labs img:hover{
     /* width: 300px; */
-    transform: translate(10px);
-    box-shadow: 10px 5px 5px #4b4b4b;
+    transform: translate(3px);
+    box-shadow: 5px 3px 3px #c9c5c5;
+    /* transform: translate(10px);
+    box-shadow: 10px 5px 5px #c9c5c5; */
+}
+
+
+#sec-two{
+    background:#131313;
 }
 
 
@@ -176,6 +204,7 @@ header ul li a:hover {
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
+    justify-content: center;
     /* border: 2px solid red; */
 }
 
@@ -188,15 +217,17 @@ header ul li a:hover {
 
 }
 
-.work-section .works img:hover{
-    transform: translate(20px);
-}
+/* .work-section .works img:hover{
+    /* transform: translate(20px); */
+    /* transform: translate(3px); */
+    /* box-shadow: 5px 3px 3px #c9c5c5; */
+/* } */ 
 
 .work-section .workcontent {
     position: relative;
     max-width: 600px;
     justify-content: flex-end;
-    margin-left: 10px;
+    margin-left: -24px;
     padding: 10px;
 
     /* bottom: 64px; */
@@ -224,12 +255,12 @@ header ul li a:hover {
     transition: all 500ms ease-in;
 } */
 /* .work-section .workcontent h2:hover:before{ */
-.work-section .workcontent h2:hover{
+/* .work-section .workcontent h2:hover{
     text-decoration: underline;
     transition: all 0.5s;
-    /* width: 100%;
-    left: 0; */
-}
+    width: 100%;
+    left: 0; 
+} */
 
 .work-section .workcontent p {
     color: rgb(126, 126, 126);
@@ -242,7 +273,7 @@ header ul li a:hover {
     margin-top: 20px;
     padding: 8px 20px;
     background: rgb(171, 169, 169);
-    color: rgb(255, 255, 255);
+    color: #131313;
     border-radius: 40px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -532,6 +563,7 @@ header ul li a:hover {
         position: relative;
         max-width: 100%;
         padding-right: 20px;
+        
     }
 
     .work-section .workcontent h2 {
@@ -542,14 +574,16 @@ header ul li a:hover {
     .work-section .workcontent a {
         font-size: 14px;
         padding: 8px 15px;
+        
     }
 
     .work-section .works {
         width: 100%;
         display: flex;
         padding-right: 0;
-        margin-top: 50px;
+        margin-top: 64px;
         justify-content: center;
+        margin-right: 47px;
     }
 
     .work-section.works img {
@@ -601,7 +635,7 @@ header ul li a:hover {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 10px;
+    padding: 50px;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -635,10 +669,27 @@ header ul li a:hover {
 
 
 
-.container {
+.container{
     max-width: 85%;
     margin: 0 auto;
     height: 100%;
+}
+.slide-up{
+    animation:slideup 1s linear forwards;
+}
+@keyframes slideup{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+#container_about{
+    margin-top: 5px;
 }
 
 .grid {
@@ -674,19 +725,21 @@ header ul li a:hover {
 }
 
 .card_title {
-    font-family: 'Merriweather',
-        serif;
+    font-family: 'Open Sans';
     font-weight: 900;
     text-transform: capitalize;
     font-size: 26px;
-    padding-bottom: 20px;
-    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .card_title:hover{
     text-decoration: underline;
 }
-
+#card_title{
+    font-size: 15px;
+    font-family: 'Poppins';
+}
 .card_body p {
     font-weight: 400;
     font-size: 18px;
@@ -755,12 +808,30 @@ a.read_more:hover {
     text-decoration: underline;
     background-color: black;
 }
+.so_link{
+    padding: 10px;
+}
+
+.so_link a{
+    font-size: 25px;
+    padding: 8px;
+    color: #131313;
+    transition: .5s;
+}
+
+.so_link a:hover{
+    font-size: 30px;
+    color: #383dc7;
+    padding: 10px;
+}
 
 @media only screen and (max-width: 1441px) and (min-width: 1025px) {
-    .container {
+    .container{
         max-width: 90%;
     }
-
+    #container_about{
+        margin-top: 29px;
+    }
     .grid {
         gap: 2%;
     }
@@ -810,6 +881,9 @@ a.read_more:hover {
     .container {
         max-width: 90%;
     }
+    #container_about{
+        margin-top: 25px;
+    }
 
     .blog-card {
         padding: 20px 10px;
@@ -825,6 +899,7 @@ a.read_more:hover {
     }
 
     .card_body p {
+
         font-size: 14px;
     }
 
