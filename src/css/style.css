@@ -190,13 +190,13 @@ header ul li a:hover {
 
 }
 
-.lab-section .labs img:hover{
-    /* width: 300px; */
+/* .lab-section .labs img:hover{
+    width: 300px;
     transform: translate(3px);
     box-shadow: 5px 3px 3px #c9c5c5;
     /* transform: translate(10px);
-    box-shadow: 10px 5px 5px #c9c5c5; */
-}
+    box-shadow: 10px 5px 5px #c9c5c5; 
+} */
 
 
 #sec-two{
@@ -425,6 +425,7 @@ header ul li a:hover {
     /* position:fixed; */
     /* color: #fff; */
 }
+
 .socials li a:hover{
     display: inline-block;
     /* filter: invert(1); */
@@ -882,7 +883,7 @@ a.read_more:hover {
 
     .grid {
         grid-template-columns: 1fr;
-        gap: 2%;
+        gap: .5%;
     }
     /* .title-head{
         margin: 10px 169px;
