@@ -9,7 +9,7 @@ const blogs = await Astro.glob('../blogs/*.md');
         <!-- <h1>This is some thing new </h1> -->
         <section class="sec">
             <header>
-                <a href="/"><img src="/images/logo.jpg" class="logo" alt=""></a>
+             <a class="team_heading" href="/"><h1>Symbiotic Lab</h1></a>
                 <div class="toggleMenu"></div>
                 <ul class="navigation">
                     <li><a href="/">Home</a></li>
@@ -21,11 +21,12 @@ const blogs = await Astro.glob('../blogs/*.md');
                    <div>
             {
                 blogs.map(b => {
-                    const { title, date, excerpt, author, slug } = b.frontmatter;
+                    const { coverImage, title, date, excerpt, author, slug } = b.frontmatter;
                     return (
                         <div class="blog">
+                            <img class="coverImg" src={ coverImage } alt="">
                             <h2>{title}</h2>
-                            <p>{date}</p>
+                            <p>{new Date(date).toLocaleDateString()}</p>
                             <p>{excerpt}</p>
                             <p>{author}</p>
                             <a class="btn" href={`/${slug}`}>Read More</a>
@@ -45,8 +46,8 @@ const blogs = await Astro.glob('../blogs/*.md');
     display: inline-block;
     margin-top: 20px;
     padding: 8px 20px;
-    background: #fff;
-    color: #111;
+    background: #000;
+    color: #fff;
     border-radius: 40px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -55,8 +56,9 @@ const blogs = await Astro.glob('../blogs/*.md');
 }
         
 .btn:hover {
-    background: #111;
-    color: #fff;
+    background: #fff;
+    border: #000;
+    color: #000;
     transition: 0.5s;
 }
 </style>

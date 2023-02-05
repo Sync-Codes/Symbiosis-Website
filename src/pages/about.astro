@@ -3,7 +3,10 @@ import "../css/style.css";
 import Layout from '../layouts/Layout.astro';	
 const members = await Astro.glob('../members/*.md');
 members.map(m => {
-    m.frontmatter.socialLinks.map(s => {
+   // // console.log(m.frontmatter);
+   const { socialLinks } = m.frontmatter;
+   // console.log(m.frontmatter.name);
+    socialLinks.map(s => {
         if(s.name === 'github') {
             m.frontmatter.github = s.url;
             m.frontmatter.gClass = s.className;
@@ -11,17 +14,21 @@ members.map(m => {
             m.frontmatter.twitter = s.url;
             m.frontmatter.tClass = s.className;
         } 
-      // else {//if(s.name === 'linkedin'){
-      //    m.frontmatter.linkedin = s.url;
-      //    m.frontmatter.lClass = s.className;
-      //   }
+      else if(s.name === 'linkedin'){
+         m.frontmatter.linkedin = s.url;
+         m.frontmatter.lClass = s.className;
+        }
+
+      //   console.log(m.frontmatter.socialLinks);
     });
+   // console.log(socialLinks);
 });
+// console.log(members);
 ---
 <Layout title="About Us">
    <section class="sec">
       <header>
-         <a href="/"><img src="/images/logo.jpg" class="logo" alt=""></a>
+         <a class="team_heading" href="/"><h1>Symbiotic Lab</h1></a>
          <div class="toggleMenu"></div>
          <ul class="navigation">
             <li><a href="/">Home</a></li>
@@ -35,7 +42,7 @@ members.map(m => {
                                  <div class="grid">
                                     {
                                        members.map(m => {
-                                            const { name, shortBio, photoUrl, role, github, twitter,gClass, tClass, } = m.frontmatter;
+                                            const { name, shortBio, photoUrl, role, github, twitter, linkedin, gClass, tClass, lClass } = m.frontmatter;
                                                return (
                                                      
                                                <div class="blog-card">
@@ -47,9 +54,9 @@ members.map(m => {
                                                         <h3 id="card_title">{role}</h3> 
                                                         <p>{shortBio}</p>
                                                       <div class="so_link">
-                                                         <a href=""><i class="fab fa-github"></i></a>
-                                                         <a href=""><i class="fab fa-linkedin"></i></a>
-                                                         <a href=""><i class="fab fa-twitter"></i></a>
+                                                         <a href={ github }><i class={ gClass }></i></a>
+                                                         <a href={ twitter }><i class={ tClass }></i></a>
+                                                         <a href={ linkedin }><i class={ lClass }></i></a>
                                                       </div>  
                                                    </div>
                                                </div>	                        	

@@ -76,6 +76,14 @@ header ul li a:hover {
     /* text-decoration:underline; */
 }
 
+.team_heading {
+    font-family: 'Fjalla One', sans-serif;
+    color: rgb(24, 24, 24);
+    font-size: 1em;
+    font-weight: 900;
+    text-decoration: none;
+}
+
 .lab-section {
     position: relative;
     width: 100%;
@@ -706,12 +714,13 @@ header ul li a:hover {
     border-radius: 30px;
     text-align: center;
     transition: 0.5s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-.blog-card:hover{
+/* .blog-card:hover{
     transform: translateY(-10px);
-    /* text-decoration: underline; */
-}
+    /* text-decoration: underline; 
+} */
 
 
 .card_img img {
@@ -733,9 +742,10 @@ header ul li a:hover {
     padding-top: 5px;
 }
 
-.card_title:hover{
+/* .card_title:hover{
     text-decoration: underline;
-}
+} */
+
 #card_title{
     font-size: 15px;
     font-family: 'Poppins';
@@ -809,6 +819,9 @@ a.read_more:hover {
     background-color: black;
 }
 .so_link{
+    /* position: absolute;
+    margin: auto; */
+    /* bottom: 10px; */
     padding: 10px;
 }
 
@@ -820,9 +833,9 @@ a.read_more:hover {
 }
 
 .so_link a:hover{
-    font-size: 30px;
+    /* font-size: 30px; */
     color: #383dc7;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 @media only screen and (max-width: 1441px) and (min-width: 1025px) {
@@ -842,6 +855,7 @@ a.read_more:hover {
 
     .card_body {
         padding: 15px;
+        position: relative;
     }
 
     .card_title {
@@ -919,3 +933,27 @@ a.read_more:hover {
 .container h2 {
     color: red;
 } */
+
+/* blogs.astro */
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.blog .coverImg {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
