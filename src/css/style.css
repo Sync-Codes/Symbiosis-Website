@@ -77,7 +77,7 @@ header ul li a:hover {
 }
 
 .team_heading {
-    font-family: 'Fjalla One', sans-serif;
+    /* font-family: 'Fjalla One', sans-serif; */
     color: rgb(24, 24, 24);
     font-size: 1em;
     font-weight: 900;
@@ -436,7 +436,9 @@ header ul li a:hover {
     /* color: blue; */
     /* color: #fff; */
 }
-
+.icon-cog{
+    color: #131313;
+}
 
 @media (max-width:991px) {
 
@@ -479,11 +481,12 @@ header ul li a:hover {
         margin: 10px 0;
     }
 
-    header ul li a:hover {
+  
+    /* header ul li a:hover { */
         /* color: rgb(70, 31, 227); */
         
-        text-decoration: underline;
-    }
+        /* text-decoration: underline;
+    } */
 
     header ul.active {
         visibility: visible;
@@ -611,6 +614,7 @@ header ul li a:hover {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        opacity: 0; /*changes*/
     }
 
 
@@ -646,7 +650,7 @@ header ul li a:hover {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 50px;
+    padding: 80px;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -741,8 +745,8 @@ header ul li a:hover {
     font-weight: 900;
     text-transform: capitalize;
     font-size: 26px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding-bottom: 10px; /*changes */
+    padding-top: 10px;    /*changes */
 }
 
 /* .card_title:hover{
@@ -756,11 +760,15 @@ header ul li a:hover {
 .card_body p {
     font-weight: 400;
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.7em;    /*changes8*/
+    word-wrap: break-word; /*changes*/
+    overflow: hidden;    /*changes*/
+    max-height:5.1em;    /*changes*/
     color: var(--dark);
     text-decoration: none;
 
 }
+
 
 p.card_author {
     font-size: 15px;
@@ -937,15 +945,57 @@ a.read_more:hover {
     color: red;
 } */
 
-/* blogs.astro */
+/* _________________________blogs.astro __________________________*/
 
-.blog {
+.vlogs{
+    /* max-width: 90%; */
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    position: relative;
+    left: 10px;
+    padding: 30px;
+}
+.vlog-body{
+    padding: 16px 20px 4px 20px;
+}
+
+.vlog-title{
+    font-family: 'Open Sans';
+    font-weight: 900;
+    text-transform: capitalize;
+    font-size: 26px;
+    padding-bottom: 10px; /*changes */
+    padding-top: 10px;    /*changes */
+}
+.vlog-date{
+    font-size: 15px;
+}
+
+.vlog-body p{
+    font-family: 'lora';
+    margin: 10px;
+    font-weight:400;
+    font-size: 18px;
+    line-height: 1.7em;    /*changes8*/
+    word-wrap: break-word; /*changes*/
+    overflow: hidden;    /*changes*/
+    max-height:5.1em;    /*changes*/
+    color: var(--dark);
+    text-decoration: none;
+}
+
+#vlog-author{
+    font-size: 15px;
+    margin: 15px;
+    font-weight: 1000;
+}
+.blog {
+    /* display: flex; */     /*changes*/
+    /* flex-direction: column; */    /*changes*/
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 10px;
+    margin: 0 15px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -959,4 +1009,77 @@ a.read_more:hover {
     height: 200px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+@media(max-width:991px){
+    .sec{
+        padding: 40px;
+    }
+   .vlogs{
+    max-width: 99%;
+    position: absolute;
+    flex-direction: column;
+    margin-top: 30px;
+    display: inline-block;
+    padding: 20px;
+   } 
+
+   .blog{
+    position: relative;
+    max-width: 100%;
+    padding-right: 20px;
+    /* width: 100%; */
+   }
+}
+
+
+/* __________________markdown css___________________-- */
+
+.blog-container{
+    padding: 100px;
+    border-radius: 25px;
+}
+
+.blog-container img{
+    /* margin: 20px; */
+    border-radius: 30px;
+    height: 30%;
+    width: 55%;
+}
+
+.blog-container h1 {
+    font-family: "Poppins";
+    font-size: 50px;
+} 
+
+.blog-container p{
+    margin: 10px;
+    font-family: "Open Sans";
+    line-height: 25px;
+}
+
+.blog-container h2{
+    font-family: "Poppins";
+}
+
+@media(max-width:991px){
+
+    .blog-container h1{
+        margin-top: 20px;
+        font-size: 70px;
+    }
+    .blog-container{
+        padding: 30px;
+        border-radius: 30px;
+    }
+    .blog-container p{
+        margin: 10px;
+        padding: 0;
+        font-size: 20px;
+        line-height: 2em;
+    }
+    .blog-container img{
+        height: 50%;
+        width: 100%;
+    }
 }
