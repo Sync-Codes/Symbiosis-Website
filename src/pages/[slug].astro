@@ -18,7 +18,7 @@ const { Content, frontmatter } = Astro.props.blog;
 
 <Layout>
     <header>
-        <a href="#"><img src="/images/logo.jpg" class="logo" alt=""></a>
+        <a class="team_heading" href="/">Symbiotic Lab</a>  
         <div class="toggleMenu" ></div>
         <ul class="navigation">
             <li><a href="/">Home</a></li>
@@ -30,4 +30,8 @@ const { Content, frontmatter } = Astro.props.blog;
     <div class="blog-container">
         <Content/>
     </div>
+    <script>
+        import "../scripts/main.js";  /*changes*/
+    </script>
 </Layout>
+
