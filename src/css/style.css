@@ -2,6 +2,9 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato&family=Montserrat:wght@600&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato&family=Lora&family=Montserrat:wght@600&family=Open+Sans&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Bree+Serif&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -137,7 +140,12 @@ header ul li a:hover {
 .lab-section .labcontent p {
     color: rgb(78, 76, 76);
     margin: 10px;
-    line-height: 30px;
+    /* line-height: 30px; */
+    line-height: 1.8em;    /*changes8*/
+    word-wrap: break-word; /*changes*/
+    overflow: hidden;    /*changes*/
+    max-height:18em; 
+    
 }
 
 .lab-section .labcontent .button {
@@ -273,7 +281,11 @@ header ul li a:hover {
 .work-section .workcontent p {
     color: rgb(126, 126, 126);
     margin: 10px;
-    line-height: 30px;
+    /* line-height: 30px; */
+    line-height: 1.8em;    /*changes8*/
+    word-wrap: break-word; /*changes*/
+    overflow: hidden;    /*changes*/
+    max-height:18em; 
 }
 
 .work-section .workcontent .button {
@@ -650,7 +662,7 @@ header ul li a:hover {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 80px;
+    padding: 40px;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -950,7 +962,7 @@ a.read_more:hover {
 .vlogs{
     /* max-width: 90%; */
     width: 100%;
-    display: flex;
+    /* display: flex; */
     position: relative;
     left: 10px;
     padding: 30px;
@@ -1018,7 +1030,7 @@ a.read_more:hover {
    .vlogs{
     max-width: 99%;
     position: absolute;
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-top: 30px;
     display: inline-block;
     padding: 20px;
@@ -1036,41 +1048,51 @@ a.read_more:hover {
 /* __________________markdown css___________________-- */
 
 .blog-container{
-    padding: 100px;
-    border-radius: 25px;
+    padding: 40px;
+    /* border-radius: 25px; */
 }
-
+.small-container{
+    padding: 65px;
+}
 .blog-container img{
-    /* margin: 20px; */
-    border-radius: 30px;
+    margin-top: 35px;
     height: 30%;
-    width: 55%;
+    width: 70%;
+    margin-bottom: 10px;
 }
 
 .blog-container h1 {
-    font-family: "Poppins";
-    font-size: 50px;
+    font-family: "Averia Serif Libre";
+    font-size: 68px;
 } 
 
 .blog-container p{
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
     font-family: "Open Sans";
-    line-height: 25px;
+    line-height: 30px;
 }
 
 .blog-container h2{
     font-family: "Poppins";
 }
 
+   
 @media(max-width:991px){
 
     .blog-container h1{
-        margin-top: 20px;
-        font-size: 70px;
+        margin-top: 40px;
+        line-height: 1.22em;
+        font-size: 30px;
     }
     .blog-container{
-        padding: 30px;
-        border-radius: 30px;
+        padding: 25px;
+        /* border-radius: 30px; */
+    }
+    .small-container{
+        padding: 10px;
     }
     .blog-container p{
         margin: 10px;
@@ -1079,7 +1101,77 @@ a.read_more:hover {
         line-height: 2em;
     }
     .blog-container img{
+        margin-top: 15px;
         height: 50%;
         width: 100%;
     }
+
+      
+}
+
+
+/* ______________________________FOOTER______________________________ */
+
+footer{
+    padding: 40px 0;
+    background-color: #181818;
+}
+
+footer .foot-socials{
+    text-align: center;
+    padding-bottom: 25px;
+    color: #fff;
+}
+
+footer .foot-socials a{
+    font-size: 24px;
+    color: inherit;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+}
+
+footer .foot-socials a:hover{
+    opacity: 0.9;
+}
+
+
+footer ul{
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 10px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+footer ul li a{
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    margin: 10px;
+}
+
+footer ul li {
+    font-size: 16px;
+    display: inline-block;
+    padding: 0 15px;
+}
+
+footer ul li a:hover{
+    opacity: 1;
+}
+
+footer .foot-copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
 }
