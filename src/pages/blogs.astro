@@ -18,7 +18,9 @@ const blogs = await Astro.glob('../blogs/*.md');
                     <li><a href="/blogs">Blogs</a></li>
                 </ul>
             </header>
-            <div class="vlogs">
+            <div class="vlogs slide-up">
+                <div class="grid">
+
             {
                 blogs.map(b => {
                     const { coverImage, title, date, excerpt, author, slug } = b.frontmatter;
@@ -37,8 +39,10 @@ const blogs = await Astro.glob('../blogs/*.md');
                     )
                 })
             }
+            </div>
         </div> 
         </section>
+        
 
 <script>
     import "../scripts/main.js";
