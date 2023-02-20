@@ -17,7 +17,7 @@ const { Content, frontmatter } = Astro.props.blog;
 ---
 
 <Layout>
-    <header>
+    <header id="blogs-header">
         <a class="team_heading" href="/">Symbiotic Lab</a>  
         <div class="toggleMenu" ></div>
         <ul class="navigation">
@@ -37,8 +37,9 @@ const { Content, frontmatter } = Astro.props.blog;
             <h3 class="heading-author">Sync</h3>
         </div> -->
 
-
+        
         <div class="small-container slide-up"> 
+            <!-- <span class="blog-tag">{ frontmatter.tag }</span> -->
             <Content/>
         </div>
        
