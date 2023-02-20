@@ -23,20 +23,23 @@ const blogs = await Astro.glob('../blogs/*.md');
 
             {
                 blogs.map(b => {
-                    const { coverImage, title, date, excerpt, author, slug } = b.frontmatter;
+                    const { coverImage, title, date, excerpt, author, slug, authorLink, tag } = b.frontmatter;
                     return (
+                    <a class="slug-link" href={`/${slug}`}>
                         <div class="blog">
                             <img class="coverImg" src={ coverImage } alt="">
                             <div class="vlog-body">
                                 <h2 class="vlog-title">{title}</h2>
                                
-                                <p>{excerpt}</p>
-                                <p id="vlog-author">{author}</p>    
-                                <p class="vlog-date">{new Date(date).toLocaleDateString()}</p>
-                            </div>
-                            
-                            <a class="btn" href={`/${slug}`}>Read More</a>
+                                <p class="vlog-excerpt">{excerpt}</p>
+ 
+                                <p id="vlog-author">{author}</p>  
+                                <p class="vlog-date">{new Date(date).toLocaleDateString("en-us", { year:"numeric", month:"short", day:"numeric" })}</p>
+                                <span class="tag">{ tag }</span>
+                                </div>
+                                
                         </div>
+                    </a>
                     )
                 })
             }

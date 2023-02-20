@@ -970,6 +970,10 @@ a.read_more:hover {
 
 /* _________________________blogs.astro __________________________*/
 
+.slug-link {
+    text-decoration: none;
+}
+
 .vlogs{
     /* max-width: 90%; */
     width: 100%;
@@ -983,18 +987,33 @@ a.read_more:hover {
 }
 
 .vlog-title{
-    text-align: justify;
-    font-family: 'Open Sans';
-    font-weight: 900;
-    text-transform: capitalize;
-    font-size: 26px;
+    /*changes by Sync */
+    text-align: left;
+    word-spacing: normal;
+    /* font-family: 'Noto Sans'; */
+    /* font-weight: 500; */
+    /* text-transform: capitalize; */
+    /* font-size: 26px; */
     padding-bottom: 10px; /*changes */
-    padding-top: 10px;    /*changes */
+    padding-top: 10px; /*changes */
+    color: hsl(224 77% 7%);
+    /* display: inline; */
+    font-family: "Noto Serif";
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 33.8px;
+    margin-left: 10px; /*changes by Sync */
 }
-.vlog-date{
-    font-family: 'Noto Serif';
-    font-size: 15px;
+
+.vlog-title:hover {
+    text-decoration: underline; /*changes by Sync */
+}
+
+.blog .vlog-date{
+    font-family: 'Noto Sans';
+    font-size: 13px;
     text-align: justify;
+    color:hsl(218 13% 47%)
 }
 
 .vlog-body p{
@@ -1011,12 +1030,48 @@ a.read_more:hover {
     text-decoration: none;
 }
 
-#vlog-author{
-    font-size: 15px;
-    margin: 15px;
-    font-family: 'Noto Serif';
-    font-weight: 1000;
+.blog .vlog-excerpt {
+    font-family: 'Noto Sans';
+    text-align: left;
+    font-size: 16px;
+    /* color: #a09b9b; */
+    color: #677387;
+    overflow-y: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
+
+#vlog-author {
+    font-size: 14px;
+    /* margin: 15px; */
+    font-family: 'Noto Serif';
+    font-weight: 700;
+    margin-bottom: -6px;
+}
+
+
+.tag {
+    display: inline-block;
+    
+    font-family: "Noto Sans";
+    font-size: 13px;
+    /* justify-content: left; */
+    /* margin-left: -130px; */
+    line-height: 18px;
+    /* margin: 4px 0px; */
+    font-weight: 600;
+    /* display: inline-block; */
+    /* justify-content: left; */
+    padding: 8px 16px;
+    background-color: hsl(0 56% 54% / 0.15);
+    border-radius: 8px;
+    color:hsl(0 56% 54%);
+}
+
+/* #vlog-author:hover {
+    text-decoration: underline;
+} */
+
 .blog {
     /* display: flex; */     /*changes*/
     /* flex-direction: column; */    /*changes*/
@@ -1037,6 +1092,8 @@ a.read_more:hover {
     height: 200px;
     object-fit: cover;
     border-radius: 20px;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
 @media(max-width:991px){
@@ -1219,4 +1276,8 @@ footer .foot-copyright{
 
 .small-container small {
     padding: 8px 13px 8px 13px;
+}
+
+.team_heading h1 {
+    font-size: 24px;
 }
