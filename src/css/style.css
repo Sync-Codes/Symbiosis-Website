@@ -4,11 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato&family=Lora&family=Montserrat:wght@600&family=Open+Sans&family=Poppins&family=Rubik&family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Noto Sans";
+    /* font-family: 'Poppins', sans-serif; */
     /* font-family: 'Fjalla One', sans-serif; */
     box-sizing: border-box;
 }
@@ -33,10 +36,13 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 40px 100px;
+    padding: 20px 100px;
     display: flex;
+    margin-top: 20px;
     justify-content: space-between;
-    align-items: center;
+    z-index: 2;
+    /* font-family: 'Noto Sans', sans-serif; */
+    /* align-items: center; */
 }
 
 header .logo {
@@ -66,6 +72,8 @@ header ul li {
 }
 
 header ul li a {
+    font-family: "Noto Sans" , sans-serif;
+    /* z-index: 100; */
     display: inline-block;
     color: rgb(24, 23, 23);
     font-weight: 700;
@@ -975,6 +983,7 @@ a.read_more:hover {
 }
 
 .vlog-title{
+    text-align: justify;
     font-family: 'Open Sans';
     font-weight: 900;
     text-transform: capitalize;
@@ -983,14 +992,17 @@ a.read_more:hover {
     padding-top: 10px;    /*changes */
 }
 .vlog-date{
+    font-family: 'Noto Serif';
     font-size: 15px;
+    text-align: justify;
 }
 
 .vlog-body p{
-    font-family: 'Averia Sans Libre';
+    text-align: justify;
+    font-family: 'Noto Serif';
     margin: 10px;
     font-weight:400;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.7em;    /*changes8*/
     word-wrap: break-word; /*changes*/
     overflow: hidden;    /*changes*/
@@ -1002,6 +1014,7 @@ a.read_more:hover {
 #vlog-author{
     font-size: 15px;
     margin: 15px;
+    font-family: 'Noto Serif';
     font-weight: 1000;
 }
 .blog {
@@ -1062,15 +1075,12 @@ a.read_more:hover {
     margin-top: 35px;
     height: 30%;
     width: 70%;
-    margin-bottom: 10px;
-   
-    
+    margin-bottom: 10px;  
 }
 
 .blog-container h1 {
-    font-family: "Open Sans";
+    font-family: "Open Sans" , sans-serif;
     font-size: 68px;
-    text-align: justify;
 } 
 
 .blog-container p{
