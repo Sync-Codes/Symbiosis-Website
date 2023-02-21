@@ -9,11 +9,13 @@ tag: "Artificial Intelligence"
 coverImage: "https://images.unsplash.com/photo-1516641396056-0ce60a85d49f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 ---
 
-<small>Artificial Intelligence</small>
+
 
 # AI's coming of age and its repurcussions on mankind
 
 This is an introduction to artificial intelligence for noobs.
+
+<small>Artificial Intelligence</small>
 
 <img title="a title" alt="Alt text" src="https://images.unsplash.com/photo-1516641396056-0ce60a85d49f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
 
