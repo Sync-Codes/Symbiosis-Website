@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
         navigation.classList.toggle('active');
 
         if (toggleMenu.classList.contains("active")) {
-            toggleMenu.style.backgroundImage = "url(/images/close.png)";
+            toggleMenu.style.backgroundImage = "url(images/close.png)";i
         } else {
-            toggleMenu.style.backgroundImage = "url(/images/menu.png)";
+            toggleMenu.style.backgroundImage = "url(images/menu.png)";
         }
     }
 
