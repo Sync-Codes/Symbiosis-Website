@@ -537,6 +537,7 @@ header ul li a:hover {
         width: 40px;
         height: 40px;
         background: url(/images/menu.png);
+
         background-position: center;
         background-size: 30px;
         background-repeat: no-repeat;
@@ -546,7 +547,7 @@ header ul li a:hover {
     }
 
     .toggleMenu .active {
-        background: url(/images/menu.png);
+        background: url(/images/close.png);
         /* width: 40px;
         height: 40px; */
         background-position: center;
@@ -1141,13 +1142,15 @@ a.read_more:hover {
 }
 
 .blog-container h1 {
-    font-family: "Open Sans" , sans-serif;
+    font-family: "Noto Sans" , sans-serif;
     font-size: 46px;
-    text-align: justify;
+    text-align: left;
 } 
 .small-container p:first-of-type {
     color: #a09b9b;
     font-family: "Noto Sans";
+    text-align: left;
+    margin: 20px 0;
 }
 
 .blog-container p{
@@ -1156,14 +1159,15 @@ a.read_more:hover {
     justify-content: center;
     align-items: center;
     margin: 10px;
-    font-family: "Averia Serif Libre";
+    /* font-family: "Averia Serif Libre"; */
+    font-family: "Noto Serif";
     line-height: 30px;
     text-align: justify;
 }
 
 .blog-container h2{
-    font-family: "Open Sans";
-    text-align: justify;
+    font-family: "Noto Sans";
+    text-align: left;
     margin: 30px 0 30px 0;
     
 }
