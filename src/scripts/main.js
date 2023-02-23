@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleMenu.classList.toggle('active');
         navigation.classList.toggle('active');
 
-        if (toggleMenu.classList.contains("active")) {
-            toggleMenu.style.backgroundImage = "url(/images/close.png)";
-        } else {
-            toggleMenu.style.backgroundImage = "url(/images/menu.png)";
-        }
+        // if (toggleMenu.classList.contains("active")) {
+        //     toggleMenu.style.backgroundImage = "url(/images/close.png)";
+        // } else {
+        //     toggleMenu.style.backgroundImage = "url(/images/menu.png)";
+        // }
     }
 
     document.querySelector('.toggleMenu').addEventListener('click', menuToggle);

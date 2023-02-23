@@ -7,47 +7,70 @@ const blogs = await Astro.glob('../blogs/*.md');
 
 <Layout title="Blog">
         <!-- <h1>This is some thing new </h1> -->
-        <section class="sec">
-            <header>
-             <a class="team_heading" href="/"><h1>Symbiotic Lab</h1></a>
-                <div class="toggleMenu"></div>
-                <ul class="navigation">
-                    <li><a href="/">Home</a></li>
-                    
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/blogs">Blogs</a></li>
-                </ul>
-            </header>
-            <div class="vlogs slide-up">
-                <div class="grid">
-
-            {
-                blogs.map(b => {
-                    const { coverImage, title, date, excerpt, author, slug, authorLink, tag } = b.frontmatter;
-                    return (
-                    <a class="slug-link" href={`/${slug}`}>
-                        <div class="blog">
-                            <img class="coverImg" src={ coverImage } alt="">
-                            <div class="vlog-body">
-                                <h2 class="vlog-title">{title}</h2>
-                               
-                                <p class="vlog-excerpt">{excerpt}</p>
- 
-                                <p id="vlog-author">{author}</p>  
-                                <p class="vlog-date">{new Date(date).toLocaleDateString("en-us", { year:"numeric", month:"short", day:"numeric" })}</p>
-                                <span class="tag">{ tag }</span>
-                                </div>
-                                
-                        </div>
-                    </a>
-                    )
-                })
-            }
-            </div>
-        </div> 
-        </section>
+        <section class="sec" id="blogs-section">
+      
+                <header>
+                    <a class="team_heading" href="/"><h1>Symbiotic Lab</h1></a>
+                       <div class="toggleMenu"></div>
+                       <ul class="navigation">
+                           <li><a href="/">Home</a></li>
+                           
+                           <li><a href="/about">About Us</a></li>
+                           <li><a href="/blogs">Blogs</a></li>
+                       </ul>
+                   </header>
+                   <div class="vlogs slide-up">
+                       <div class="grid">
+       
+                   {
+                       blogs.map(b => {
+                           const { coverImage, title, date, excerpt, author, slug, authorLink, tag } = b.frontmatter;
+                           return (
+                           <a class="slug-link" href={`/${slug}`}>
+                               <div class="blog">
+                                   <img class="coverImg" src={ coverImage } alt="">
+                                   <div class="vlog-body">
+                                       <h2 class="vlog-title">{title}</h2>
+                                      
+                                       <p class="vlog-excerpt">{excerpt}</p>
         
+                                       <p id="vlog-author">{author}</p>  
+                                       <p class="vlog-date">{new Date(date).toLocaleDateString("en-us", { year:"numeric", month:"short", day:"numeric" })}</p>
+                                       <span class="tag">{ tag }</span>
+                                       </div>
+                                       
+                               </div>
+                           </a>
+                           )
+                       })
+                   }
+                   </div>
+               </div> 
+            </section>
+            
+            
+            <footer id="blogs-footer">
+                <div class="foot-socials">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                    <ul class="foot-list">
+                        <li>
+                            <a href="/">Home</a>
+                            <a href="/about">About Us</a>
+                            <a href="/blogs">Blogs</a>
+                        </li>
+                    </ul>
+                    <p class="foot-copyright">Symbiotic Labs @ 2023</p>
+        </footer>
 
+        
+           
+ 
+       
+    
+   
 <script>
     import "../scripts/main.js";
 </script>
