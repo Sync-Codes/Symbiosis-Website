@@ -53,15 +53,17 @@ header .logo {
     transition: 0.5s;
 }
 
-header .logo:hover {
+/* header .logo:hover {
     position: relative;
     max-width: 80px;
     border-radius: 56px;
     box-shadow: 10px 5px 5px rgb(148, 147, 147);
-    transform: translate(-2px);
-}
+    transform: translate(-2px); */
+/* } */
+
 .active{
     color:#383dc7;
+    font-weight:1000;
 }
 
 header ul {
@@ -78,7 +80,7 @@ header ul li a {
     /* z-index: 100; */
     display: inline-block;
     color: rgb(24, 23, 23);
-    font-weight: 700;
+    font-weight: 100;
     margin-left: 40px;
     text-decoration: none;
 }
@@ -104,6 +106,7 @@ header ul li a:hover {
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
+    /* justify-content: center; */
     /* border: 2px solid red; */
 }
 
@@ -434,6 +437,7 @@ header ul li a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    opacity: 1;
 }
 
 .socials li{
@@ -1318,3 +1322,7 @@ footer .foot-copyright{
     margin-bottom:10px
   }
 }
+
+
+
+
