@@ -60,7 +60,9 @@ header .logo:hover {
     box-shadow: 10px 5px 5px rgb(148, 147, 147);
     transform: translate(-2px);
 }
-
+.active{
+    color:#383dc7;
+}
 
 header ul {
     position: relative;
@@ -493,6 +495,8 @@ header ul li a:hover {
         visibility: hidden;
         opacity: 0;
     }
+    
+
 
     header ul li a {
         display: inline-block;
