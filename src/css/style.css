@@ -53,13 +53,13 @@ header .logo {
     transition: 0.5s;
 }
 
-/* header .logo:hover {
+header .logo:hover {
     position: relative;
     max-width: 80px;
     border-radius: 56px;
     box-shadow: 10px 5px 5px rgb(148, 147, 147);
-    transform: translate(-2px); */
-/* } */
+    transform: translate(-2px);
+ }
 
 .active{
     color:#383dc7;
