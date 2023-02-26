@@ -15,18 +15,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.querySelector('.toggleMenu').addEventListener('click', menuToggle);
-  });
+    // netlify code
+    document.querySelectorAll('.nav__link').forEach(link => {
+        if (link.pathname === '/') {
+            if (link.pathname === window.location.pathname) {
+                link.classList.add('active');
+            }
+        } else {
+            if (link.pathname === window.location.pathname.slice(0, -1)) {
+                link.classList.add('active');
+            }
+        }
+    });
+
+    // local code
+    // document.querySelectorAll('.nav__link').forEach(link => {
+
+    //         if (link.pathname === window.location.pathname.slice(0, -1)) {
+    //             link.classList.add('active');
+    //         }
+    //     });
+    });
 
 
 
-const navLinkEles = document.querySelectorAll('.nav__link');
-const windowPathname = window.location.pathname;
 
-navLinkEles.forEach(navlinkEle =>{
-    const navLinkPathname = new URL(navlinkEle.href).pathname;
-
-
-    if(windowPathname === navLinkPathname){
-        navlinkEle.classList.add('active');
-    }
-});
